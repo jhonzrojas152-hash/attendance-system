@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Student Attendance System</h1>
+
+    <!-- LOGIN -->
+    <div id="loginSection">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p>Don't have an account?</p>
+        <button onclick="showRegister()">Register</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <!-- REGISTER -->
+    <div id="registerSection" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" id="regUsername" placeholder="Username">
+        <input type="password" id="regPassword" placeholder="Password">
+        <select id="regRole">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="faculty">Faculty</option>
+            <option value="admin">Admin</option>
+        </select>
+        <button onclick="register()">Create Account</button>
+        <button onclick="showLogin()">Back to Login</button>
+        <p id="registerMessage"></p>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" style="display:none;">
+
+        <div class="profile-header">
+            <div>
+                <h2 id="welcomeUser"></h2>
+                <p id="userRole"></p>
+            </div>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <!-- STUDENT PERSONAL DASHBOARD -->
+        <div id="studentDashboard" style="display:none; margin-bottom:20px;">
+            <h3>My Personal Dashboard</h3>
+            <textarea id="studentDesignBox" placeholder="Design your dashboard here..."></textarea>
+            <button onclick="saveStudentDesign()">Save Design</button>
+
+            <h4>My Attendance</h4>
+            <p id="myNameDisplay"></p>
+            <button onclick="markSelf('Present')">Present</button>
+            <button onclick="markSelf('Absent')">Absent</button>
+            <button onclick="markSelf('Late')">Late</button>
+        </div>
+
+        <!-- STUDENT MANAGEMENT -->
+        <div id="studentManagementSection">
+
+            <h3>Add Student</h3>
+            <input type="text" id="studentName" placeholder="Student Name">
+            <input type="text" id="studentGrade" placeholder="Grade">
+            <input type="text" id="studentSection" placeholder="Section">
+            <button id="addStudentBtn" onclick="addStudent()">Add Student</button>
+
+            <h3>Student List</h3>
+
+            <input type="text" id="searchInput" placeholder="Search student..." onkeyup="searchStudent()">
+            <button onclick="sortByName()">Sort by Name</button>
+            <button onclick="sortById()">Sort by ID</button>
+
+            <ul id="studentList"></ul>
+        </div>
+
+        <h3>Attendance Overview</h3>
+        <canvas id="attendanceChart"></canvas>
+        <div id="dashboardStats"></div>
+
+        <div style="text-align:right;margin-top:20px;">
+            <button onclick="goToComments()">Next Page ➜</button>
+        </div>
+
+    </div>
+
+    <!-- COMMENT PAGE -->
+    <div id="commentPage" style="display:none;">
+        <h3>Public Comment Section</h3>
+        <textarea id="commentInput" placeholder="Write comment..."></textarea>
+        <button onclick="postComment()">Post Comment</button>
+        <ul id="commentList" style="list-style:none;padding:0;"></ul>
+        <button onclick="backToDashboard()">⬅ Back</button>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

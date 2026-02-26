@@ -1,0 +1,69 @@
+body {
+    font-family: Arial;
+    background-color: #f4f6f9;
+    text-align: center;
+}
+
+.container {
+    width: 800px;
+    max-width: 95%;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px gray;
+}
+
+input, select, textarea {
+    display: block;
+    width: 90%;
+    padding: 8px;
+    margin: 10px auto;
+}
+
+button {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#studentList {
+    list-style: none;
+    padding: 0;
+}
+
+#studentList li {
+    background: #f1f1f1;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.button-group {
+    margin-top: 5px;
+}
+
+#attendanceChart {
+    max-width: 400px;
+    margin: 20px auto;
+}
